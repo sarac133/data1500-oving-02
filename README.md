@@ -120,7 +120,7 @@ curl http://localhost:8000/api/students
 
 **Mål:** Forstå søkefunksjonalitet, input-validering, og sikkerhet
 
-**Oppgave a):**
+#### Oppgave a)
 1. Studer Java-klasse `FileAccessAPI.java` og finn ut hvilke endepunkter den implementerer.
 2. Finn ut og forstå hvordan man kan aksessere filen `secret.txt`, som ligger høyere i filsystemets hierarki enn mappen som serveren starter på.
 3. Bruk Path.normalize() metoden for å beskytte mot navigering i filesystemet ved hjelp av endepunktet. Kompiler `FileAccessAPI.java` på nytt og test resultatet.
@@ -141,7 +141,7 @@ curl "http://localhost:8010/api/search?query=bruker2"
 ```
 *OBS! det er lagt inn en test, som sjekker om query innelholder `' OR '1'='1`, som da gir den klassiske SQL-injection eksemplet hvor det blir passert 1=1 inn til databasehåndteringssystemet, som da tolker dette som en setning som alltid er sann.*
 
-**Oppgave b):**
+#### Oppgave b)
 
 *OBS! SQL-injection er her meget naivt simulert (sjekker kun på at %27 tegnet er i parameterverdien). Vi kommer tilbake til dette sikkerhetsproblemet når vi skal bruke databasehåndteringssystemer istedenfor filer for datalagring.* 
 

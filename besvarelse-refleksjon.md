@@ -16,16 +16,30 @@ S3: Hvordan ville du testet denne API-en manuelt?
 
 ## Refleksjonsspørsmål Oppgave 2
 
-S1: Hva er "SQL injection"/"path traversal", og hvordan kan det oppstå i en webapplikasjon?
-- Ditt svar:
-  
-S2: Hvordan kan du beskytte deg mot "SQL injection"/"path traversal"?
+### Del a):
+
+S1: Hva er Path Traversal (Directory Traversal), og hvorfor er det farlig?
 - Ditt svar: 
 
-S3: Hva er forskjellen på validering på frontend vs backend?  
-- Ditt svar:
-  
+S2: Hvordan kan du beskytte koden din mot Path Traversal?
+- Ditt svar: 
 
+
+### Del b):
+
+S1: Hva er SQL injection, og hvordan kan det oppstå i en webapplikasjon?
+- Ditt svar: 
+
+S2: Hvordan kan du beskytte deg mot SQL injection?
+- Ditt svar: 
+
+S3: Hva er forskjellen på validering på frontend vs backend?
+- Ditt svar: 
+
+S4: Hva er likheten mellom Path Traversal og SQL Injection?
+- Ditt svar: 
+
+  
 ## Refleksjonsspørsmål Oppgave 3
 
 S1: Hva er forskjellen mellom POST og PUT?
@@ -41,7 +55,7 @@ S3: Hva skjer hvis to brukere prøver å oppdatere samme student samtidig?
 
 S1: Hva er implikasjonene av å tillate DELETE-operasjoner?
 - Ditt svar:
-- 
+
 S2: Hvordan ville du implementert "soft delete"?
 - Ditt svar:
 
