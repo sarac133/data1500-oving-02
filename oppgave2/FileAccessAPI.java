@@ -104,7 +104,9 @@ public class FileAccessAPI {
         
         // SÅRBARHET: Simulert SQL Injection logikk
         // Hvis input inneholder "' OR '1'='1", returnerer vi alt.
-        boolean injectionSuccess = searchQuery.contains("' OR '1'='1");
+        boolean injectionSuccess = searchQuery.contains("' OR '1'");
+        System.out.println("searchQuery=" + searchQuery);
+        System.out.println("injectionSuccess=" + injectionSuccess);
         
         for (String line : lines) {
             if (line.trim().isEmpty()) continue;

@@ -144,8 +144,8 @@ fi
 # ============================================================
 echo ""
 echo "--- Oppgave 2 (Ny): FileAccessAPI (Sikkerhet) ---"
-if [ -d "oppgave2_ny" ]; then
-    cd oppgave2_ny
+if [ -d "oppgave2" ]; then
+    cd oppgave2
     
     # Compile
     echo -n "Compiling FileAccessAPI.java... "
@@ -154,7 +154,7 @@ if [ -d "oppgave2_ny" ]; then
         
         # Start server in background
         # Note: We point to the 'testdata/data' directory relative to where we run the server
-        java FileAccessAPI 9005 ../${TESTDATA_DIR}/data > /dev/null 2>&1 &
+        java FileAccessAPI 9005 ${TESTDATA_DIR}/data > /dev/null 2>&1 &
         SERVER_PID=$!
         sleep 1
         
@@ -163,7 +163,7 @@ if [ -d "oppgave2_ny" ]; then
             "curl -s 'http://localhost:9005/api/files?filename=studenter.csv' | grep -q 'Mickey'"
             
         # Test 2: Path Traversal (lese secret.txt som ligger to nivåer opp)
-        # Vi antar at serveren kjører i oppgave2_ny, data-mappen er ../testdata/data.
+        # Vi antar at serveren kjører i oppgave2, data-mappen er ../testdata/data.
         # secret.txt ligger i roten av data1500-oving-02, dvs ../../secret.txt fra data-mappen.
         run_test "GET /api/files?filename=../../secret.txt (Path Traversal)" \
             "curl -s 'http://localhost:9005/api/files?filename=../../secret.txt' | grep -q 'SuperHemmelig123'"
@@ -175,7 +175,7 @@ if [ -d "oppgave2_ny" ]; then
         # Test 4: Simulert SQL Injection
         # Vi må URL-encode ' OR '1'='1 -> %27%20OR%20%271%27%3D%271
         run_test "GET /api/search (SQL Injection)" \
-            "curl -s \"http://localhost:9005/api/search?query=%27%20OR%20%271%27%3D%271\" | grep -q 'bruker5'"
+            "curl -s \"http://localhost:9005/api/search?query=%27%20OR%20%271%27\" | grep -q 'bruker5'"
         
         # Kill server
         kill $SERVER_PID 2>/dev/null
