@@ -2,7 +2,7 @@
 # Test script for DATA1500 Øving 2 - Webapplikasjoner
 # PowerShell version for Windows
 #
-# Usage: pwsh ./test-local.ps1
+# Usage: ./test-local.ps1
 # ============================================================
 
 $ErrorActionPreference = "Continue"
